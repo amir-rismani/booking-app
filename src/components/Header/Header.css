@@ -1,0 +1,116 @@
+.header{
+    border: 1px solid gainsboro;
+    padding: 1rem;
+    border-radius: .5rem;
+
+}
+
+.searchbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchbar__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbar__icon{
+    font-size: 1.3rem;
+    margin-right: .3rem;
+}
+
+.searchbar__input{
+    border: none;
+    outline: none;
+}
+
+.searchbar__icon.location{
+    color: rgb(229, 50, 50);
+}
+
+.searchbar__icon.calendar {
+    color: rgb(89, 50, 229);
+}
+
+.searchbar__icon.search {
+    color: white;
+    margin: 0;
+}
+
+.searchbar__button{
+    background-color: rgb(89, 50, 229);
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+    cursor: pointer;
+
+}
+
+.separator{
+    border-right: 1px solid gainsboro;
+    height: 1rem;
+    margin: auto 1rem;
+}
+
+.guest{
+    position: relative;
+}
+
+.guest__label{
+    cursor: pointer;
+    user-select: none;
+}
+
+.guest__option{
+    position: absolute;
+    background-color: white;
+    border: 1px solid gainsboro;
+    width: 100%;
+    border-radius: .5rem;
+    padding: 1rem;
+    left: -.5rem;
+    top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.option-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.option-item__counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counter-button{
+    width: 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border: none;
+    border-radius: .25rem;
+    cursor: pointer;
+    font-size: large;
+}
+
+.counter-button:disabled{
+    cursor: not-allowed;
+}
+
+.counter-number{
+    min-width: 2rem;
+    text-align: center;
+}
