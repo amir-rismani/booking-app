@@ -2,11 +2,22 @@ import { HiLocationMarker, HiCalendar, HiOutlineSearch, HiOutlinePlusSm, HiOutli
 import "./Header.css"
 import { useRef, useState } from "react";
 import useOutsideClick from "../../hooks/useOutsideClick";
+
+import { DateRange } from "react-date-range";
+import 'react-date-range/dist/styles.css'; // main css file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+import { format } from "date-fns";
+
 function Header() {
     const [destination, setDestination] = useState("");
     const [showGuestOption, setShowGuestOption] = useState(false);
     const [options, setOptions] = useState({ adult: 1, children: 0, room: 1 });
-
+    const [date, setDate] = useState([{
+        startDate: new Date(),
+        endDate: new Date(),
+        key: 'selection',
+    }]);
+    const [showDate, setShowDate] = useState(false);
     const handleCount = (type, operation) => {
         setOptions((prevOptions) => {
             return {
@@ -15,7 +26,6 @@ function Header() {
             }
         })
     }
-
     return (
         <div className='header'>
             <div className="searchbar">
@@ -26,7 +36,8 @@ function Header() {
                 <span className="separator"></span>
                 <div className="searchbar__item">
                     <HiCalendar className="searchbar__icon calendar" />
-                    <span>08/30/2023 to 08/30/2023</span>
+                    <span id="date-range-label" onClick={() => setShowDate(is => !is)}>{`${format(new Date(date[0].startDate), "yyyy/MM/dd")} to ${format(new Date(date[0].endDate), "yyyy/MM/dd")}`}</span>
+                    {showDate && <DateRange className="date-range" ranges={date} onChange={item => setDate([item.selection])} minDate={new Date()} />}
                 </div>
                 <span className="separator"></span>
                 <div className="searchbar__item">
