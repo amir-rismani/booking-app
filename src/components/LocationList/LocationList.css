@@ -1,0 +1,40 @@
+.locations{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+
+
+.location-item{
+}
+
+.location-item img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.location-item__desc p{
+    margin: .3rem auto;
+}
+
+.muted {color: gray;}
+
+@media only screen and (min-width:767px){
+    .locations {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (min-width:1024px) {
+    .locations {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (min-width:1280px) {
+    .locations {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
