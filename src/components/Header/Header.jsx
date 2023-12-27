@@ -10,12 +10,15 @@ import { format } from "date-fns";
 import { createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
 
 function Header() {
-    const [destination, setDestination] = useState("");
+    const [searchParams, setSearchParams] = useSearchParams();
+    const dateSearchParam = JSON.parse(searchParams.get("date") || "{}")[0]
+    const optionsSearchParam = JSON.parse(searchParams.get("options"))
+    const [destination, setDestination] = useState(searchParams.get("destination") || "");
     const [showGuestOption, setShowGuestOption] = useState(false);
-    const [options, setOptions] = useState({ adult: 1, children: 0, room: 1 });
+    const [options, setOptions] = useState({ adult: optionsSearchParam?.adult || 1, children: optionsSearchParam?.children || 0, room: optionsSearchParam?.room || 1 });
     const [date, setDate] = useState([{
-        startDate: new Date(),
-        endDate: new Date(),
+        startDate: new Date(dateSearchParam?.startDate || null),
+        endDate: new Date(dateSearchParam?.endDate || null),
         key: 'selection',
     }]);
     const [showDate, setShowDate] = useState(false);
