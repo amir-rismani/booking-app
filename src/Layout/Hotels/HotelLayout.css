@@ -1,0 +1,11 @@
+.hotel-layout{
+    display: flex;
+}
+
+.slidebar{
+    flex: 1 0 50%;
+}
+
+.map{
+    flex: 2 0 50%;
+}

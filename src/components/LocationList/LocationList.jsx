@@ -1,8 +1,9 @@
 import useFetch from "../../hooks/useFetch"
+import Loader from "../Loader/Loader";
 import "./LocationList.css"
 function LocationList() {
     const { data: locations, isLoading } = useFetch('http://localhost:5000/hotels');
-    if (isLoading) return <p>Loading data...</p>
+    if (isLoading) return <Loader />
     if (!locations.length) return <p>Location not fond...</p>
     return (
         <div className="location-list">
@@ -10,7 +11,7 @@ function LocationList() {
             <div className="locations">
                 {locations.map(location => <LocationItem location={location} key={location.id} />)}
             </div>
-        </div >
+        </div>
     )
 }
 
@@ -24,7 +25,6 @@ function LocationItem({ location }) {
                 <strong>{location.smart_location}</strong>
                 <p className="muted">{location.name}</p>
                 <p><strong>€&nbsp;{location.price}</strong>&nbsp;<span className="muted">Night</span></p>
-
             </div>
         </div>
     )

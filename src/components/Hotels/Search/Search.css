@@ -1,0 +1,29 @@
+.search-results{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.search-results a{
+    text-decoration: none;
+}
+
+.search-item{
+    display: flex;
+    gap: 1rem;
+}
+
+.search-item img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.search-item p{
+    margin: .5rem auto
+}
+
+p,strong:not(.mute){
+    color: black;
+}

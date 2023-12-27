@@ -1,0 +1,10 @@
+.loader{
+    display: flex;
+    align-items: center;
+    margin: 2rem auto;
+    
+}
+
+.loader__icon{
+    margin-left: .5rem;
+}
