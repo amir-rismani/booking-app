@@ -7,6 +7,7 @@ import { DateRange } from "react-date-range";
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from "date-fns";
+import { createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
 
 function Header() {
     const [destination, setDestination] = useState("");
@@ -18,6 +19,8 @@ function Header() {
         key: 'selection',
     }]);
     const [showDate, setShowDate] = useState(false);
+    const navigate = useNavigate();
+
     const handleCount = (type, operation) => {
         setOptions((prevOptions) => {
             return {
@@ -26,6 +29,19 @@ function Header() {
             }
         })
     }
+
+    const handleSearchClick = () => {
+        const encodedParams = createSearchParams({
+            destination,
+            date: JSON.stringify(date),
+            options: JSON.stringify(options)
+        })
+        navigate({
+            pathname: '/hotel',
+            search: encodedParams.toString()
+        })
+    };
+
     return (
         <div className='header'>
             <div className="searchbar">
@@ -47,7 +63,7 @@ function Header() {
                     </div>
                 </div>
                 <div className="searchbar__item">
-                    <button className="searchbar__button"><HiOutlineSearch className="searchbar__icon search" /></button>
+                    <button className="searchbar__button" onClick={handleSearchClick}><HiOutlineSearch className="searchbar__icon search" /></button>
                 </div>
             </div>
         </div>
