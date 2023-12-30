@@ -4,9 +4,8 @@ import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet"
 import "./Map.css"
 import { useHotels } from "../../context/HotelsProvider";
 import Loader from "../Loader/Loader";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 function Map() {
-    const navigate = useNavigate();
     const [mapPosition, setMapPosition] = useState([51.505, -0.09]);
     const { hotels, isLoading } = useHotels();
 
@@ -51,6 +50,6 @@ export default Map
 
 const ChangeCenter = ({ position }) => {
     const map = useMap();
-    map.setView(position)
+    map.setView(position, map.getZoom())
     return null;
 }
