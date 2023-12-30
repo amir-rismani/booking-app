@@ -56,11 +56,11 @@ function Header() {
                 <div className="searchbar__item">
                     <HiCalendar className="searchbar__icon calendar" />
                     <span id="date-range-label" onClick={() => setShowDate(is => !is)}>{`${format(new Date(date[0].startDate), "yyyy/MM/dd")} to ${format(new Date(date[0].endDate), "yyyy/MM/dd")}`}</span>
-                    {showDate && <DateRange className="date-range" ranges={date} onChange={item => setDate([item.selection])} minDate={new Date()} />}
+                    {showDate && <DateRange className="date-range index-top" ranges={date} onChange={item => setDate([item.selection])} minDate={new Date()} />}
                 </div>
                 <span className="separator"></span>
                 <div className="searchbar__item">
-                    <div className="guest">
+                    <div className="guest index-top">
                         <span id="guest-label" className="guest__label" onClick={() => setShowGuestOption(is => !is)}>{options.adult} adult &bull; {options.children} children &bull; {options.room} room</span>
                         {showGuestOption && <GuestOptionList options={options} onChangeCount={handleCount} setShowGuestOption={setShowGuestOption} />}
                     </div>
