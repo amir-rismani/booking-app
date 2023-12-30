@@ -1,0 +1,14 @@
+.map{
+    height: 97vh;
+    width: 50%;
+    position: sticky;
+    right: .5rem;
+    top: .5rem;
+    z-index: -1;
+    
+}
+
+.map__leaflet{
+    height: 100%;
+    margin-top: .5rem;
+}

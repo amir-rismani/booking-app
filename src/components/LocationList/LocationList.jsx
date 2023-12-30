@@ -1,8 +1,8 @@
-import useFetch from "../../hooks/useFetch"
+import { useHotels } from "../../context/HotelsProvider";
 import Loader from "../Loader/Loader";
 import "./LocationList.css"
 function LocationList() {
-    const { data: locations, isLoading } = useFetch('http://localhost:5000/hotels');
+    const { hotels: locations, isLoading } = useHotels();
     if (isLoading) return <Loader />
     if (!locations.length) return <p>Location not fond...</p>
     return (

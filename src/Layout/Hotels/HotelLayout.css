@@ -4,6 +4,7 @@
 
 .slidebar{
     flex: 1 0 50%;
+    /* padding-right: 1rem; */
 }
 
 .map{
