@@ -17,7 +17,9 @@
 
 .search-item.current {
     background-color: aliceblue;
+    border-radius: .5rem;
 }
+
 .search-item img{
     width: 100px;
     height: 100px;
