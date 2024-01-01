@@ -21,8 +21,9 @@ function Hotels() {
 export default Hotels
 
 function SearchItem({ location }) {
+    const { currentHotel } = useHotels()
     return (
-        <div className="search-item">
+        <div className={`search-item ${currentHotel?.id === location.id ? 'current' : ''}`}>
             <img src={location.picture_url.url} alt={location.name} />
             <div className="search-item__desc">
                 <strong>{location.smart_location}</strong>
