@@ -1370,15 +1370,6 @@
       "id": 11
     },
     {
-      "cityName": "Glenfaba",
-      "country": "Isle of Man",
-      "countryCode": "IM",
-      "latitude": "54.213876590887054",
-      "longitude": "-4.608362320975354",
-      "host_location": "Glenfaba Isle of Man",
-      "id": 12
-    },
-    {
       "cityName": "Perwez",
       "country": "Belgium",
       "countryCode": "BE",
@@ -1395,15 +1386,6 @@
       "longitude": "-6.961523862400299",
       "host_location": "Torshavn Faroe Islands (the)",
       "id": 14
-    },
-    {
-      "cityName": "Sveitarfelagið Skagafjorður",
-      "country": "Iceland",
-      "countryCode": "IS",
-      "latitude": "64.94226363529204",
-      "longitude": "-18.30046611561821",
-      "host_location": "Sveitarfelagið Skagafjorður Iceland",
-      "id": 15
     },
     {
       "cityName": "Daneborg",
@@ -1424,15 +1406,6 @@
       "id": 17
     },
     {
-      "cityName": "South Slave Region",
-      "country": "Canada",
-      "countryCode": "CA",
-      "latitude": "60.84568128434734",
-      "longitude": "-108.04734239031906",
-      "host_location": "South Slave Region Canada",
-      "id": 18
-    },
-    {
       "cityName": "Ardal",
       "country": "Norway",
       "countryCode": "NO",
@@ -1449,6 +1422,15 @@
       "longitude": "-74.70594775426034",
       "host_location": "Qikiqtaaluk Region Canada",
       "id": 20
+    },
+    {
+      "cityName": "London",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "countryCode": "GB",
+      "latitude": "51.515046352806365",
+      "longitude": "-0.09252548217773439",
+      "host_location": "London United Kingdom of Great Britain and Northern Ireland (the)",
+      "id": 21
     }
   ]
 }
