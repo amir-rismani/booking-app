@@ -45,7 +45,8 @@ const BookmarksProvider = ({ children }) => {
         try {
             await axios.post('http://localhost:5000/bookmarks', location);
             setBookmarks(prevBookmarks => ([...prevBookmarks, location]))
-            navigate(`/bookmarks?lat=${location.latitude}&lng=${location.longitude}`);
+            setCurrentBookmark(location)
+            navigate('/bookmarks');
         } catch (error) {
             console.log(error.message)
         } finally {

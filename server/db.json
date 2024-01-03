@@ -1449,6 +1449,24 @@
       "longitude": "-108.04734239031906",
       "host_location": "South Slave Region Canada",
       "id": 18
+    },
+    {
+      "cityName": "Ardal",
+      "country": "Norway",
+      "countryCode": "NO",
+      "latitude": "61.22597782565205",
+      "longitude": "7.671403781152289",
+      "host_location": "Ardal Norway",
+      "id": 19
+    },
+    {
+      "cityName": "Qikiqtaaluk Region",
+      "country": "Canada",
+      "countryCode": "CA",
+      "latitude": "70.00551199252484",
+      "longitude": "-74.70594775426034",
+      "host_location": "Qikiqtaaluk Region Canada",
+      "id": 20
     }
   ]
 }
