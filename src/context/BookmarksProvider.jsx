@@ -53,6 +53,7 @@ const BookmarksProvider = ({ children }) => {
     }, []);
 
     const getBookmark = async (id) => {
+        if (currentBookmark.id === Number(id)) return null;
         dispatch({ type: 'loading' });
         try {
             const { data } = await axios.get(`${BASE_URL}/bookmarks/${id}`);
