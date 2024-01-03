@@ -1,0 +1,12 @@
+.bookmark-layout{
+    display: flex;
+}
+
+.slidebar{
+    flex: 1 0 50%;
+    /* padding-right: 1rem; */
+}
+
+.map{
+    flex: 2 0 50%;
+}

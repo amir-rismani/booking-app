@@ -17,7 +17,6 @@ const useGeoLocation = () => {
                 setGeoLoading(false);
             },
             (err) => {
-                console.log(err.message)
                 setGeoError(err.message)
                 setGeoLoading(false);
             }

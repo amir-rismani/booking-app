@@ -1,21 +1,15 @@
 import { useEffect, useState } from "react"
-import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet"
+import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet"
 import { BsGeo } from "react-icons/bs";
 import "./Map.css"
-import { useHotels } from "../../context/HotelsProvider";
-import Loader from "../Loader/Loader";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useGeoLocation from "../../hooks/useGeoLocation";
 import { LoaderIcon } from "react-hot-toast";
-function Map() {
+import useUrlPosition from "../../hooks/useUrlPosition";
+function Map({ locations }) {
     const [mapPosition, setMapPosition] = useState([51.505, -0.09]);
-    const { hotels, isLoading } = useHotels();
-
-    const { geoLoading, geoPosition, geoError, getGeoLocation } = useGeoLocation();
-    const [searchParams, setSearchParams] = useSearchParams();
-    const lat = searchParams.get('lat');
-    const lng = searchParams.get('long');
-
+    const { geoLoading, geoPosition, getGeoLocation } = useGeoLocation();
+    const [lat, lng] = useUrlPosition();
     useEffect(() => {
         if (lat && lng) setMapPosition([lat, lng]);
     }, [lat, lng])
@@ -23,8 +17,6 @@ function Map() {
     useEffect(() => {
         if (geoPosition?.lat && geoPosition?.lng) setMapPosition([geoPosition.lat, geoPosition.lng]);
     }, [geoPosition])
-
-    if (isLoading) return <Loader />
 
     return (
         <div className="map">
@@ -34,16 +26,17 @@ function Map() {
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png" />
                 {
-                    hotels.map(hotel => {
+                    locations.map(location => {
                         return (
-                            <Marker key={hotel.id} position={[hotel.latitude, hotel.longitude]}>
+                            <Marker key={location.id} position={[location.latitude, location.longitude]}>
                                 <Popup>
-                                    <strong>{hotel.smart_location}</strong>
+                                    <strong>{location.smart_location}</strong>
                                 </Popup>
                             </Marker>
                         )
                     })
                 }
+                <DetectClick />
                 <ChangeCenter position={mapPosition} />
             </MapContainer>
         </div>
@@ -52,9 +45,18 @@ function Map() {
 
 export default Map
 
-
 const ChangeCenter = ({ position }) => {
     const map = useMap();
     map.setView(position, map.getZoom())
     return null;
+}
+
+const DetectClick = () => {
+    const navigate = useNavigate();
+    useMapEvents({
+        click: (e) => {
+            navigate(`/bookmarks/add?lat=${e.latlng.lat}&lng=${e.latlng.lng}`)
+        },
+    })
+    return null
 }

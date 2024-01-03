@@ -1350,6 +1350,105 @@
       "longitude": "16.809082031250004",
       "host_location": "Salal Chad",
       "id": 7
+    },
+    {
+      "cityName": "Crowborough",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "countryCode": "GB",
+      "latitude": "51.05651381508686",
+      "longitude": "0.15795834259850763",
+      "host_location": "Crowborough United Kingdom of Great Britain and Northern Ireland (the)",
+      "id": 8
+    },
+    {
+      "cityName": "Vang",
+      "country": "Norway",
+      "countryCode": "NO",
+      "latitude": "61.142906189420685",
+      "longitude": "8.776619726544782",
+      "host_location": "Vang Norway",
+      "id": 9
+    },
+    {
+      "cityName": "Svetla nad Sazavou",
+      "country": "Czechia",
+      "countryCode": "CZ",
+      "latitude": "49.71044227007848",
+      "longitude": "15.422430557129266",
+      "host_location": "Svetla nad Sazavou Czechia",
+      "id": 10
+    },
+    {
+      "cityName": "Feuguerolles-Bully",
+      "country": "France",
+      "countryCode": "FR",
+      "latitude": "49.11344897037127",
+      "longitude": "-0.41262067168237104",
+      "host_location": "Feuguerolles-Bully France",
+      "id": 11
+    },
+    {
+      "cityName": "Glenfaba",
+      "country": "Isle of Man",
+      "countryCode": "IM",
+      "latitude": "54.213876590887054",
+      "longitude": "-4.608362320975354",
+      "host_location": "Glenfaba Isle of Man",
+      "id": 12
+    },
+    {
+      "cityName": "Perwez",
+      "country": "Belgium",
+      "countryCode": "BE",
+      "latitude": "50.6390606071183",
+      "longitude": "4.785848483389242",
+      "host_location": "Perwez Belgium",
+      "id": 13
+    },
+    {
+      "cityName": "Torshavn",
+      "country": "Faroe Islands (the)",
+      "countryCode": "FO",
+      "latitude": "62.0832739761021",
+      "longitude": "-6.961523862400299",
+      "host_location": "Torshavn Faroe Islands (the)",
+      "id": 14
+    },
+    {
+      "cityName": "Sveitarfelagið Skagafjorður",
+      "country": "Iceland",
+      "countryCode": "IS",
+      "latitude": "64.94226363529204",
+      "longitude": "-18.30046611561821",
+      "host_location": "Sveitarfelagið Skagafjorður Iceland",
+      "id": 15
+    },
+    {
+      "cityName": "Daneborg",
+      "country": "Greenland",
+      "countryCode": "GL",
+      "latitude": "72.38249078770637",
+      "longitude": "-40.925418668419134",
+      "host_location": "Daneborg Greenland",
+      "id": 16
+    },
+    {
+      "cityName": "Reykjavik",
+      "country": "Iceland",
+      "countryCode": "IS",
+      "latitude": "64.20635002203274",
+      "longitude": "-21.55761364666426",
+      "host_location": "Reykjavik Iceland",
+      "id": 17
+    },
+    {
+      "cityName": "South Slave Region",
+      "country": "Canada",
+      "countryCode": "CA",
+      "latitude": "60.84568128434734",
+      "longitude": "-108.04734239031906",
+      "host_location": "South Slave Region Canada",
+      "id": 18
     }
   ]
 }

@@ -1,0 +1,55 @@
+.create-bookmark{
+    padding: 1rem 1rem 1rem 0;
+}
+
+.create-bookmark form{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+} 
+
+.form-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.form-group label{
+    flex-basis: 5rem;
+    font-size: large;
+}
+
+.form-group input {
+    flex-grow: 1;
+    border-radius:.3rem;
+    font-size: large;
+    border: 1px solid gainsboro;
+    padding: .2rem;
+    outline: none;
+}
+
+.button{
+    border-radius: .3rem;
+    border: 1px solid black;
+    padding: .3rem .5rem;
+    cursor: pointer;
+}
+.button--back{
+    background-color: white;
+}
+
+.button--primary {
+    background-color: rgb(89, 50, 229);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.input-flag {
+    position: absolute;
+    right: .5rem;
+}
