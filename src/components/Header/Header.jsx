@@ -7,7 +7,7 @@ import { DateRange } from "react-date-range";
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from "date-fns";
-import { createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
 
 function Header() {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -48,6 +48,7 @@ function Header() {
     return (
         <div className='header'>
             <div className="searchbar">
+                <Link to="/bookmarks">Bookmarks</Link>
                 <div className="searchbar__item">
                     <HiLocationMarker className="searchbar__icon location" />
                     <input className="searchbar__input" value={destination} onChange={(ev) => setDestination(ev.target.value)} type="text" placeholder="Where to go?" id="destination" name="destination" />

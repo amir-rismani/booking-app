@@ -124,3 +124,8 @@
 .index-top{
     z-index: 9999;
 }
+
+a{
+    text-decoration: none;
+    color: black;
+}
