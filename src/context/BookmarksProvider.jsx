@@ -4,7 +4,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const BookmarksContext = createContext();
-
+const BASE_URL = 'http://localhost:5000'
 const BookmarksProvider = ({ children }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [currentBookmark, setCurrentBookmark] = useState(null);
@@ -31,7 +31,7 @@ const BookmarksProvider = ({ children }) => {
     const getBookmark = async (id) => {
         setIsLoading(true)
         try {
-            const { data } = await axios.get(`http://localhost:5000/bookmarks/${id}`);
+            const { data } = await axios.get(`${BASE_URL}/bookmarks/${id}`);
             setCurrentBookmark(data);
         } catch (error) {
             toast.error(error.message)
@@ -43,20 +43,32 @@ const BookmarksProvider = ({ children }) => {
     const createBookmark = async (location) => {
         setIsLoading(true)
         try {
-            await axios.post('http://localhost:5000/bookmarks', location);
+            await axios.post(`${BASE_URL}/bookmarks`, location);
             setBookmarks(prevBookmarks => ([...prevBookmarks, location]))
             setCurrentBookmark(location)
             navigate('/bookmarks');
         } catch (error) {
-            console.log(error.message)
+            toast.error(error.message)
         } finally {
             setIsLoading(false)
         }
 
     }
 
+    const deleteBookmark = async (id) => {
+        setIsLoading(true)
+        try {
+            await axios.delete(`${BASE_URL}/bookmarks/${id}`);
+            setBookmarks(prevBookmarks => prevBookmarks.filter(bookmark => bookmark.id !== id))
+        } catch (error) {
+            toast.error(error.message)
+        } finally {
+            setIsLoading(false)
+        }
+    }
+    
     return (
-        <BookmarksContext.Provider value={{ isLoading, bookmarks, getBookmark, currentBookmark, createBookmark }}>
+        <BookmarksContext.Provider value={{ isLoading, bookmarks, getBookmark, currentBookmark, createBookmark, deleteBookmark }}>
             {children}
         </BookmarksContext.Provider>
     );

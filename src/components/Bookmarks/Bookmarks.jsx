@@ -3,6 +3,7 @@ import { useBookmarks } from "../../context/BookmarksProvider"
 import Loader from "../Loader/Loader";
 import "./Bookmarks.css"
 import { Link } from "react-router-dom";
+import { BsTrash } from "react-icons/bs";
 function Bookmarks() {
     const { bookmarks, isLoading } = useBookmarks();
     if (isLoading) return <Loader />
@@ -17,14 +18,22 @@ function Bookmarks() {
 export default Bookmarks
 
 const BookmarkItem = ({ bookmark }) => {
-    const { currentBookmark } = useBookmarks();
+    const { currentBookmark, deleteBookmark } = useBookmarks();
+
+    const handleDeleteBookmark = (ev, id) => {
+        ev.preventDefault();
+        deleteBookmark(id)
+    }
 
     return (
         <Link to={`${bookmark.id}?lat=${bookmark.latitude}&lng=${bookmark.longitude}`}>
             <div className={`bookmark-item ${currentBookmark?.id === bookmark.id ? 'current' : ''}`}>
-                <ReactCountryFlag className="country-flag" countryCode={bookmark.countryCode} />
-                <strong>{bookmark.cityName}</strong>
-                <span className="muted">{bookmark.country}</span>
+                <div className="bookmark-item__description">
+                    <ReactCountryFlag className="country-flag" countryCode={bookmark.countryCode} />
+                    <strong>{bookmark.cityName}</strong>
+                    <span className="muted">{bookmark.country}</span>
+                </div>
+                <BsTrash className="trash-icon" onClick={(ev) => handleDeleteBookmark(ev, bookmark.id)} />
             </div>
         </Link>
     )

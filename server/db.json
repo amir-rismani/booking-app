@@ -1334,15 +1334,6 @@
       "id": 2
     },
     {
-      "cityName": "Tchirozerine",
-      "country": "Niger (the)",
-      "countryCode": "NE",
-      "latitude": "17.699632705518173",
-      "longitude": "8.920898437500002",
-      "host_location": "Tchirozerine Niger (the)",
-      "id": 6
-    },
-    {
       "cityName": "Salal",
       "country": "Chad",
       "countryCode": "TD",
@@ -1350,15 +1341,6 @@
       "longitude": "16.809082031250004",
       "host_location": "Salal Chad",
       "id": 7
-    },
-    {
-      "cityName": "Crowborough",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "countryCode": "GB",
-      "latitude": "51.05651381508686",
-      "longitude": "0.15795834259850763",
-      "host_location": "Crowborough United Kingdom of Great Britain and Northern Ireland (the)",
-      "id": 8
     },
     {
       "cityName": "Vang",
