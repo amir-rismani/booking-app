@@ -1,0 +1,13 @@
+.auth-layout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-modal{
+    border:1px solid gainsboro;
+    padding: 1rem;
+    margin: 10rem auto;
+    flex-basis: 30rem;
+    border-radius: 1rem;
+}

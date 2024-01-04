@@ -12,30 +12,37 @@ import Bookmarks from "./components/Bookmarks/Bookmarks"
 import BookmarkDetails from "./components/Bookmarks/BookmarkDetails/BookmarkDetails"
 import CreateBookmark from "./components/Bookmarks/CreateBookmark/CreateBookmark"
 import BookmarksProvider from "./context/BookmarksProvider"
+import Login from "./components/Login/Login"
+import Auth from "./Layout/Auth/Auth"
+import AuthProvider from "./context/AuthProvider"
 
 
 function App() {
 
   return (
-    <BookmarksProvider>
-      <HotelsProvider>
-        <Toaster />
-        <Header />
-        <Routes>
-          <Route index path="/" element={<LocationList />} />
-          <Route path="/hotels" element={<HotelLayout />}>
-            <Route index element={<Hotels />} />
-            <Route path=":id" element={<Details />} />
-          </Route>
-          <Route path="/bookmarks" element={<BookmarkLayout />}>
-            <Route index element={<Bookmarks />} />
-            <Route path=":id" element={<BookmarkDetails />} />
-            <Route path="add" element={<CreateBookmark />} />
-          </Route>
-
-        </Routes>
-      </HotelsProvider>
-    </BookmarksProvider>
+    <AuthProvider>
+      <BookmarksProvider>
+        <HotelsProvider>
+          <Toaster />
+          <Header />
+          <Routes>
+            <Route index path="/" element={<LocationList />} />
+            <Route path="/hotels" element={<HotelLayout />}>
+              <Route index element={<Hotels />} />
+              <Route path=":id" element={<Details />} />
+            </Route>
+            <Route path="/bookmarks" element={<BookmarkLayout />}>
+              <Route index element={<Bookmarks />} />
+              <Route path=":id" element={<BookmarkDetails />} />
+              <Route path="add" element={<CreateBookmark />} />
+            </Route>
+            <Route path="/login" element={<Auth />}>
+              <Route index element={<Login />} />
+            </Route>
+          </Routes>
+        </HotelsProvider>
+      </BookmarksProvider>
+    </AuthProvider>
   )
 }
 

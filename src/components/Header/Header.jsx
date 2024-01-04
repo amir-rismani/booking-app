@@ -1,4 +1,4 @@
-import { HiLocationMarker, HiCalendar, HiOutlineSearch, HiOutlinePlusSm, HiOutlineMinusSm } from "react-icons/hi";
+import { HiLocationMarker, HiCalendar, HiOutlineSearch, HiOutlinePlusSm, HiOutlineMinusSm, HiLogout } from "react-icons/hi";
 import "./Header.css"
 import { useRef, useState } from "react";
 import useOutsideClick from "../../hooks/useOutsideClick";
@@ -7,7 +7,8 @@ import { DateRange } from "react-date-range";
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from "date-fns";
-import { Link, createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, NavLink, createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
+import { useAuth } from "../../context/AuthProvider";
 
 function Header() {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -48,7 +49,7 @@ function Header() {
     return (
         <div className='header'>
             <div className="searchbar">
-                <Link to="/bookmarks">Bookmarks</Link>
+                <NavLink to="/bookmarks">Bookmarks</NavLink>
                 <div className="searchbar__item">
                     <HiLocationMarker className="searchbar__icon location" />
                     <input className="searchbar__input" value={destination} onChange={(ev) => setDestination(ev.target.value)} type="text" placeholder="Where to go?" id="destination" name="destination" />
@@ -69,6 +70,7 @@ function Header() {
                 <div className="searchbar__item">
                     <button className="searchbar__button" onClick={handleSearchClick}><HiOutlineSearch className="searchbar__icon search" /></button>
                 </div>
+                <User />
             </div>
         </div>
     )
@@ -99,4 +101,19 @@ const GuestOptionItem = ({ options, type, onChangeCount, minLimit }) => {
             </div>
         </div>
     );
+}
+
+const User = () => {
+    const { user, isAuth, logout } = useAuth();
+    const navigate = useNavigate();
+    const handleClick = () => {
+        logout();
+        navigate('/');
+    }
+    return (
+        <div>
+            {isAuth ? <div className="user"><span>Hi {user.name}</span> <HiLogout className="icon" onClick={handleClick} /></div> : <NavLink to="/login">Login</NavLink>}
+        </div>
+    )
+
 }

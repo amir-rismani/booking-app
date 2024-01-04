@@ -5,20 +5,22 @@
 .create-bookmark form{
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 1rem;
 } 
 
 .form-group{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /* justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    position: relative;
+    position: relative; */
 }
 
 .form-group label{
-    flex-basis: 5rem;
+    /* flex-basis: 5rem; */
     font-size: large;
+    font-weight: bold;
 }
 
 .form-group input {
@@ -30,10 +32,16 @@
     outline: none;
 }
 
+.form-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .button{
     border-radius: .3rem;
     border: 1px solid black;
-    padding: .3rem .5rem;
+    padding: .5rem .5rem;
     cursor: pointer;
 }
 .button--back{
@@ -47,6 +55,10 @@
     justify-content: center;
     align-items: center;
     gap: .5rem;
+}
+
+.button.block{
+    flex-grow: 1;
 }
 
 .input-flag {

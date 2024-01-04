@@ -72,7 +72,7 @@ function CreateBookmark() {
                     <input type="text" name="country" id="country" className="form-input" value={location.country} onChange={handleChange} />
                     <ReactCountryFlag countryCode={location.countryCode} className="input-flag" />
                 </div>
-                <div className="form-group">
+                <div className="form-buttons">
                     <button type="button" className="button button--back" onClick={() => navigate(-1)}>&larr; Back</button>
                     <button type="submit" className="button button--primary" disabled={isLoadingCreate}>Add {isLoadingCreate && < LoaderIcon />}</button>
                 </div>
