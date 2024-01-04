@@ -15,6 +15,7 @@ import BookmarksProvider from "./context/BookmarksProvider"
 import Login from "./components/Login/Login"
 import Auth from "./Layout/Auth/Auth"
 import AuthProvider from "./context/AuthProvider"
+import ProtectRoute from "./components/ProtectRoute/ProtectRoute"
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
               <Route index element={<Hotels />} />
               <Route path=":id" element={<Details />} />
             </Route>
-            <Route path="/bookmarks" element={<BookmarkLayout />}>
+            <Route path="/bookmarks" element={<ProtectRoute><BookmarkLayout /></ProtectRoute>}>
               <Route index element={<Bookmarks />} />
               <Route path=":id" element={<BookmarkDetails />} />
               <Route path="add" element={<CreateBookmark />} />
